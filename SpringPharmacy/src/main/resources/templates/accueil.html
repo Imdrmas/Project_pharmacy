@@ -20,42 +20,59 @@ th:href="@{css/fontawesome.min.css}"/>
 <div class="container">
 <br/>
   <div class="panel panel-default">
-    <div class="panel-heading"><h2 class="red">Liste de produits</h2></div>
+    <div class="panel-heading"><h6 class="h2">Liste de medicaments</h6></div>
     <div class="panel-body">
     
-    
-<div class="container">
-<nav class="navbar navbar-light bg-light" style="text-align: center;">
+<div class="container myBtn">
+<div class="row">
+  <div class="col-lg-6">
+  <nav class="navbar navbar-light bg-light" style="text-align: center;">
   <form class="form-inline" th:action="@{/user/accueil}" method="get">
-    <input style="width:50%" class="form-control mr-sm-3" th:value="${mc}" name="mc" type="search" 
+   <button type="submit" class="button" style="vertical-align:middle"><span>Search </span></button>
+    <input style="height: 40px; width: 60%" class="form-control mr-sm-3" th:value="${mc}" name="mc" type="search" 
     placeholder="Search" aria-label="Search" />
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
-
+  </div>
+  <div class="col-lg-6">
+  <nav class="navbar navbar-light bg-light" style="text-align: center;">
+  <form class="form-inline" th:action="@{/user/AddPanier}" method="Get" style="margin-right: 40px;">
+   <textarea style="height: 40px; width: 60%" class="form-control" name="listeProduit" placeholder="Enter produit et quantité" rows="3"></textarea>
+    <button type="submit" class="button" style="vertical-align:middle"><span>Acheter </span></button>
+  </form>
+</nav>
+  </div>
+</div>
 </div>
 
-<div id="my-table" class="container" style="overflow-x:auto;">
-<table>
-  <thead>
-    <tr style="background: aliceblue; color:#0a3d62">
-    <th>ID</th> <th>Désignation</th> <th>Prix</th> <th>Quantité</th>
+<table class="table table-striped">
+  <thead style="background: #b1d3f2;">
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantité</th>
+       <th scope="col">Detaits</th>
     </tr>
   </thead>
   <tbody>
-   <tr th:each="p:${listProduits}">
+    <tr th:each="p:${listProduits}" id="thAcheter">
         <td th:text="${p.id}"></td>
         <td th:text="${p.designation}"></td>
         <td th:text="${p.prix}"></td>
         <td th:text="${p.quantite}"></td>
-   </tr>
+        <td><a th:href="@{/user/detait(id=${p.id})}"><button id="btnAcheter">Detait</button></a></td>
+   </tr>     
   </tbody>
 </table>
-</div>
+
+
+
 <div class="container">
  <ul class="nav nav-pills">
    <li th:class="${pageCourante}==${status.index}?'active':''" th:each="p,status:${pages}">
-   <a th:href="@{/user/accueil(page=${status.index},size=${size},mc=${mc})}" th:text="${status.index}"></a>
+   <a th:href="@{/user/accueil(page=${status.index},size=${size},mc=${mc})}" 
+   th:text="${status.index}"></a>
    </li>
  </ul>
 </div>

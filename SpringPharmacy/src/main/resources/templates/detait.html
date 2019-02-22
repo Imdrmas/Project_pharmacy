@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<title>Confirmation produits</title>
+<link rel="stylesheet" type="text/css" 
+href="../static/css/bootstrap.min.css"
+th:href="@{css/bootstrap.min.css}"/>
+</head>
+<body>
+<div layout:fragment="content">
+<div class="container">
+<br/>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" id="head-title">Detaits</div>
+    <div class="panel-body">
+    <div class="col-lg-6" id="detait">
+
+     <div class="form-group">
+        <label>Désignation: </label>
+        <label th:text="${produits.designation}"></label>
+       </div>
+         <div class="form-group">
+        <label>Prix: </label>
+        <label th:text="${produits.prix}"></label>
+       </div>
+         <div class="form-group">
+        <label>Quantité: </label>
+        <label th:text="${produits.quantite}"></label>
+       </div>
+       <hr/>
+         <div class="form-group">
+        <label  style="padding: 14px; font-size: 14px; color: #333;"> 
+        The resources below have been provided to help narrow your search to specific, targeted drug information. Information is available for both consumers and healthcare professionals on over 24,000 prescription and over the counter medicines available primarily in the USA </label>
+        </div>
+    </div>
+  
+       
+    <div class="col-lg-6">
+      <img class="responsives" src="https://img1.bibamagazine.fr/var/bibamagazine/storage/images/style-de-vie/sante/selon-une-etude-rester-calme-c-est-rester-en-bonne-sante-42076/331252-2-fre-FR/Selon-une-etude-rester-calme-c-est-rester-en-bonne-sante_width1024.jpg" />
+    </div>
+    
+    </div>
+  </div>
+  
+</div>
+</div>
+</body>
+</html>

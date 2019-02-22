@@ -4,7 +4,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="layout">
 <head>
 <meta charset="utf-8" />
-<title>Produits</title>
+<title>Tous les produits</title>
 <link rel="stylesheet" type="text/css" 
 href="../static/css/bootstrap.min.css"
 th:href="@{css/bootstrap.min.css}"/>
@@ -16,7 +16,7 @@ th:href="@{css/bootstrap.min.css}"/>
 <div class="container">
 <br/>
   <div class="panel panel-default">
-    <div class="panel-heading"><h2 class="red">Liste de produits</h2></div>
+    <div class="panel-heading table-primary"><h2 class="h2">Liste de medicaments</h2></div>
     <div class="panel-body">
     
     
@@ -25,16 +25,20 @@ th:href="@{css/bootstrap.min.css}"/>
   <form class="form-inline" th:action="@{/user/accueil}" method="get">
     <input style="width:50%" class="form-control mr-sm-3" th:value="${mc}" name="mc" type="search" 
     placeholder="Search" aria-label="Search" />
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button style="background: #e67e22; color: #FBFBFB;" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
 </div>
 
-<div class="container" style="overflow-x:auto;">
-<table>
-  <thead>
+<table class="table table-striped">
+  <thead style="background: #b1d3f2;">
     <tr>
-    <th>ID</th> <th>Désignation</th> <th>Prix</th> <th>Quantité</th>
+      <th scope="col">#ID</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantité</th>
+       <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -48,7 +52,7 @@ th:href="@{css/bootstrap.min.css}"/>
    </tr>
   </tbody>
 </table>
-</div>
+
 
 <div class="container">
  <ul class="nav nav-pills">

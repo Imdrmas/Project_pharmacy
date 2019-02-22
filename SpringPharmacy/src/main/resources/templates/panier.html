@@ -4,7 +4,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="layout">
 <head>
 <meta charset="utf-8" />
-<title>404</title>
+<title>Panier</title>
 <link rel="stylesheet" type="text/css" 
 href="../static/css/bootstrap.min.css"
 th:href="@{css/bootstrap.min.css}"/>
@@ -13,12 +13,22 @@ th:href="@{css/bootstrap.min.css}"/>
 <div layout:fragment="content">
 <div class="container">
 <br/>
+
   <div class="panel panel-default">
-    <div class="panel-heading" id="head-title">Page Not Found</div>
+    <div class="panel-heading" id="head-title">Votre facutre</div>
     <div class="panel-body">
-       <h2 class="red">Vous n'êtes pas autorisé à accéder à cette ressource</h2>
+ 
+       <div class="col-lg-6">
+       <p id="MyListaffiche" th:text="${afficherFacture}"></p>
+       </div>
+   
+       <div class="col-lg-6">
+          <img class="responsives" src="https://ae01.alicdn.com/kf/HTB1jc1cLpXXXXX7aXXXq6xXFXXXi/B-b-en-bonne-sant-Frais-Alimentaire-Fruits-Chargeur-grignoteuse-le-sevrage-Dentition-Dummy-Remplacement-T.jpg_640x640.jpg" />
+       </div>  
+     
     </div>
   </div>
+
 </div>
 </div>
 </body>

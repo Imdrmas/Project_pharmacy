@@ -4,7 +4,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="layout">
 <head>
 <meta charset="utf-8" />
-<title>Produits</title>
+<title>Confirmation produits</title>
 <link rel="stylesheet" type="text/css" 
 href="../static/css/bootstrap.min.css"
 th:href="@{css/bootstrap.min.css}"/>
@@ -13,9 +13,9 @@ th:href="@{css/bootstrap.min.css}"/>
 <div layout:fragment="content">
 <div class="container">
 <br/>
-<h1>Confirmation</h1>
+
   <div class="panel panel-default">
-    <div class="panel-heading">Saisie d'un produit</div>
+    <div class="panel-heading" id="head-title">Confirmation</div>
     <div class="panel-body">
        <div class="form-group">
         <label>ID:</label>
@@ -35,6 +35,7 @@ th:href="@{css/bootstrap.min.css}"/>
        </div>
     </div>
   </div>
+  
 </div>
 </div>
 </body>

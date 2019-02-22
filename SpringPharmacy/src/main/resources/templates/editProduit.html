@@ -4,7 +4,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="layout">
 <head>
 <meta charset="utf-8" />
-<title>Produits</title>
+<title>Edit produits</title>
 <link rel="stylesheet" type="text/css" 
 href="../static/css/bootstrap.min.css"
 th:href="@{css/bootstrap.min.css}"/>
@@ -20,7 +20,7 @@ th:href="@{css/style.css}"/>
  <div class="col-md-6 col-xs-12">
 <br/>
   <div class="panel panel-default">
-    <div class="panel-heading">Modifier le produit</div>
+    <div class="panel-heading" id="head-title">Modifier le produit</div>
     <div class="panel-body">
        <form th:action="@{save}" method="post">
            <div class="form-group">
@@ -41,7 +41,7 @@ th:href="@{css/style.css}"/>
           <label class="form-label">Quantité:</label>
           <input class="form-control" type="text" name="quantite" th:value="${produit.quantite}"/>
         </div>
-       <button class="btn btn-primary" type="submit">Save</button>
+       <button class="btn btn-primary" style="color: #f7f1e3;" type="submit">Save</button>
        </form>
     </div>
   </div>
